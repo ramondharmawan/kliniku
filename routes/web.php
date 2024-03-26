@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\DoctorScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,12 @@ Route::middleware(['auth'])->group(function () {
 
     //doctors
     Route::resource('doctors', DoctorController::class);
+
+    //doctor-schedules
+    Route::resource('doctor-schedules', DoctorScheduleController::class);
+
+    //patients
+    Route::resource('patients', \App\Http\Controllers\PatientController::class);
 });
 
 // Route::get('/login', function () {
